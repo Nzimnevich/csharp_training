@@ -8,12 +8,12 @@ public class GroupRemovalTest:BaseTest
         [Test]
         public void GroupRemovalCaseTest()
         {
-            OpenHomePage();
-            Login(new AccountData("admin","secret"));
-            GoToGroupsPage();
-            SelectGroup();
-            RemoveGroupPage(1);
-            ReturnToGroupsPage();
+            navigationHelper.GoToHomePage();
+            loginHelper.Login(new AccountData("admin","secret"));
+            navigationHelper.GoToGroupsPage();
+            groupHelper.SelectGroup();
+            groupHelper.RemoveGroupPage(1);
+            groupHelper.ReturnToGroupsPage();
         }
     }
 

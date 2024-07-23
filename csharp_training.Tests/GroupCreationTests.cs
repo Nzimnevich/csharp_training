@@ -9,22 +9,17 @@ namespace WebAddressbookTests;
         [Test]
         public void GroupCreationTestCaseTest()
         {
-            OpenHomePage();
-            Login(new AccountData("admin", "secret"));
-            GoToGroupsPage();
-            InitNewGroupCreation();
+            navigationHelper.GoToHomePage();
+            loginHelper.Login(new AccountData("admin", "secret"));
+            navigationHelper.GoToGroupsPage();
+            groupHelper.InitNewGroupCreation();
             GroupData group = new GroupData("group");
             group.Header = "description";
             group.Footer = "test";
-            FillGroupForm(group);
-            SubmitGroupCreation();
-            ReturnToGroupsPage();
-
+            groupHelper.FillGroupForm(group);
+            groupHelper.SubmitGroupCreation();
+            groupHelper.ReturnToGroupsPage();
         }
-
-        private void SubmitGroupCreation()
-        {
-            driver.FindElement(By.Name("submit")).Click();
-        }
+        
     }
 
