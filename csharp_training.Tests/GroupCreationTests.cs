@@ -53,6 +53,7 @@ namespace WebAddressbookTests
             FillGroupForm(group);
             SubmitGroupCreation();
             ReturnToGroupsPage();
+            
         }
 
         private void ReturnToGroupsPage()
