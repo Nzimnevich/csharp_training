@@ -9,13 +9,13 @@ public class ContactCreationTests:BaseTest
         [Test]
         public void ContactCreationTestCaseTest()
         {
-            navigationHelper.GoToHomePage();
-            loginHelper.Login(new AccountData("admin","secret"));
-            contactHelper.ClickAddNewButton();
+            app.Navigator.GoToHomePage();
+            app.Auth.Login(new AccountData("admin","secret"));
+            app.Contact.ClickAddNewButton();
             ContactData contactData = new ContactData ("Nika", "Zima");
-            contactHelper.FillContactForm(contactData);
-            groupHelper.SubmitContactCreation();
-            navigationHelper.ReturnHomePage();
+            app.Contact.FillContactForm(contactData);
+            app.Group.SubmitContactCreation();
+            app.Navigator.ReturnHomePage();
         }
     }
 
